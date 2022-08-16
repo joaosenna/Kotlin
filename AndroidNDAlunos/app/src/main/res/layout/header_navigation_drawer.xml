@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:padding="12dp"
+    android:gravity="bottom"
+    android:background="@color/secondary_dark">
+
+    <ImageView
+        android:id="@+id/imageViewPerfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/foto_perfil"
+        app:srcCompat="@drawable/ic_baseline_account_circle_92" />
+
+    <TextView
+        android:id="@+id/textViewNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp"
+        tools:text="@tools:sample/full_names"
+        android:textAppearance="?attr/textAppearanceHeadline6"/>
+
+    <TextView
+        android:id="@+id/textViewEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@tools:sample/us_phones" />
+</LinearLayout>

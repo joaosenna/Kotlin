@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textFieldRm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/rm"
+        app:layout_constraintBaseline_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textFieldNomeAluno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/nome_do_aluno"
+        app:layout_constraintBaseline_toBottompOf="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textFieldCurso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Turma"
+        app:layout_constraintBaseline_toBottompOf="@id/textFieldAluno"
+        app:layout_constraintStart_toStartOf="parent"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="Salvar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf=""
+
+
+    
+</androidx.constraintlayout.widget.ConstraintLayout>
