@@ -1,0 +1,63 @@
+package br.com.fiap.androidndalunos.fragment
+
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.fragment.app.Fragment
+import br.com.fiap.androidndalunos.database.Aluno
+import br.com.fiap.androidndalunos.database.AppDatabase
+import br.com.fiap.androidndalunos.databinding.FragmentAlunosBinding
+import br.com.fiap.androidndalunos.databinding.FragmentFormAlunosBinding
+
+class FormAlunoFragment : Fragment() {
+
+    lateinit var binding: FragmentFormAlunosBinding
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = FragmentFormAlunosBinding.inflate(inflater, container, false)
+        val view = binding.root
+        val appDb = AppDatabase.getDatabase(view.context)
+
+        binding.buttonSalvar.setOnClickListener{
+
+            if(validarCamposObrigatorios){
+
+            val nome = binding.editTextNome.text.toString()
+            val rm = binding.editTextRM.text.toString()
+            val curso = binding.editTextCurso.text.toString()
+            val ano = binding.editTextAno.text.toString()
+            val turma = binding.editTextTurma.text.toString()
+            val novoAluno = Aluno(0, nome, rm, curso, ano, turma)
+            appDb.alunoDao().insert(novoAluno)
+
+            Toast.makeText(view.context, "Registro Cadastrado com Sucesso!", Toast.LENGTH_LONG).show()
+
+            binding.editTextNome.setText("")
+            binding.editTextRM.setText("")
+            binding.editTextCurso.setText("")
+            binding.editTextAno.setText("")
+            binding.editTextTurma.setText("")
+
+            }
+
+        }
+
+        return view
+
+        fun validarCamposObrigatorios(view: ConstraintLayout):Boolean{
+            if(binding.editTextNome.text.isNullOrEmpty()){
+                Toast.makeText(view.context."Campo nome é obrigatório".Toast.LENGTH.LONG).show()
+                binding.editTextNome.requestFocus()
+
+                return false
+            }
+        }
+    }
+}
